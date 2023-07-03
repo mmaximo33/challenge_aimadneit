@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "0e47ac8a-10f5-4d79-af06-d2e43508d59d",
+		"name": "Tienda Mia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Provider",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://magento.test/tm_provider/Provider/All",
+							"protocol": "https",
+							"host": [
+								"magento",
+								"test"
+							],
+							"path": [
+								"tm_provider",
+								"Provider",
+								"All"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://magento.test/tm_provider/Provider/get/sku/:sku",
+							"protocol": "https",
+							"host": [
+								"magento",
+								"test"
+							],
+							"path": [
+								"tm_provider",
+								"Provider",
+								"get",
+								"sku",
+								":sku"
+							],
+							"variable": [
+								{
+									"key": "sku",
+									"value": "24-MB02",
+									"description": "Utilizar [24-MB01, 24-MB02,24-MB03,24-MB04,24-MB05]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usaged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://magento.test/tm_provider/Provider/",
+							"protocol": "https",
+							"host": [
+								"magento",
+								"test"
+							],
+							"path": [
+								"tm_provider",
+								"Provider",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Marketplace",
+			"item": [
+				{
+					"name": "Calculate > BestOfferBySku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://magento.test/tm_bestoffer/BestOffer/index/sku/:sku",
+							"protocol": "https",
+							"host": [
+								"magento",
+								"test"
+							],
+							"path": [
+								"tm_bestoffer",
+								"BestOffer",
+								"index",
+								"sku",
+								":sku"
+							],
+							"variable": [
+								{
+									"key": "sku",
+									"value": "24-MB02",
+									"description": "Utilizar [24-MB01, 24-MB02,24-MB03,24-MB04,24-MB05]"
+								}
+							]
+						},
+						"description": "Este controlador selecciona mejor oferta en funcion del sku enviado"
+					},
+					"response": []
+				},
+				{
+					"name": "Report > Orders with BestOFferSeller by Sku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://magento.test/tm_bestoffer/reports/index/sku/:sku",
+							"protocol": "https",
+							"host": [
+								"magento",
+								"test"
+							],
+							"path": [
+								"tm_bestoffer",
+								"reports",
+								"index",
+								"sku",
+								":sku"
+							],
+							"variable": [
+								{
+									"key": "sku",
+									"value": "24-MB02",
+									"description": "Utilizar [24-MB01, 24-MB02,24-MB03,24-MB04,24-MB05]"
+								}
+							]
+						},
+						"description": "Este endpoint devuelve las ordenes generadas con oferta segun el sku"
+					},
+					"response": []
+				},
+				{
+					"name": "Report > Orders with BestOFferSeller by Date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://magento.test/tm_bestoffer/reports/index/date/:date",
+							"protocol": "https",
+							"host": [
+								"magento",
+								"test"
+							],
+							"path": [
+								"tm_bestoffer",
+								"reports",
+								"index",
+								"date",
+								":date"
+							],
+							"variable": [
+								{
+									"key": "date",
+									"value": "2023-07-02",
+									"description": "YYYY-MM-DD"
+								}
+							]
+						},
+						"description": "Este endpoint devuelve las ordenes generadas con oferta segun la fecha"
+					},
+					"response": []
+				},
+				{
+					"name": "Report > Downloads Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://magento.test/tm_bestoffer/reports/dailysummary/date/:date",
+							"protocol": "https",
+							"host": [
+								"magento",
+								"test"
+							],
+							"path": [
+								"tm_bestoffer",
+								"reports",
+								"dailysummary",
+								"date",
+								":date"
+							],
+							"variable": [
+								{
+									"key": "date",
+									"value": "2023-07-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myTest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://magento.test/tm_bestoffer/BestOffer/mmtest/date/2023-07-01",
+							"protocol": "https",
+							"host": [
+								"magento",
+								"test"
+							],
+							"path": [
+								"tm_bestoffer",
+								"BestOffer",
+								"mmtest",
+								"date",
+								"2023-07-01"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

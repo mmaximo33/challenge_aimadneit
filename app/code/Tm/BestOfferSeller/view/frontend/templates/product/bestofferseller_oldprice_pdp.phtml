@@ -1,0 +1,28 @@
+<?php
+    /** @var \Tm\BestOfferSeller\Block\Product\BestOfferSellerOldPrice $block */
+?>
+<style>
+    .fade-in-effect {
+        opacity: 0;
+        animation: fade-in 3s ease-in-out forwards;
+    }
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<?php if ($block->hasCustomAttribute()): ?>
+    <div class="price-wrapper" id="bestofferseller_old_price">
+        <span class="price fade-in-effect" style="font-size: 25px;text-align: center;">
+            BestOfferSeller <br/>
+            <s><?= $block->getOldPrice() ?></s>
+            Old price
+        </span>
+    </div>
+<?php endif; ?>
+

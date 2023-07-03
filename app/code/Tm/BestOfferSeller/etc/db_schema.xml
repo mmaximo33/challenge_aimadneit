@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="tm_bestofferseller_orders" resource="default" engine="innodb"
+           comment="tm best offer seller orders">
+        <column name="entity_id" xsi:type="int"
+                unsigned="true" nullable="false" identity="true"
+                comment="identifier"/>
+        <column name="sku" xsi:type="varchar"
+                nullable="true" length="64"
+                comment="SKU"/>
+        <column name="order_id" xsi:type="int"
+                unsigned="true" nullable="false" identity="false"
+                comment="reference order id"/>
+        <column name="order_item_id" xsi:type="int"
+                unsigned="true" nullable="false" identity="false"
+                comment="reference order_item_id"/>
+        <column name="best_offer_seller" xsi:type="longtext"
+                nullable="true" comment="Best Offer Seller"/>
+        <column name="created_at" xsi:type="datetime" default="CURRENT_TIMESTAMP"
+                on_update="false" nullable="false"
+                comment="Datatime Create order"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+
+        <constraint xsi:type="foreign" referenceId="TM_BESTOFFERSELLER_ORDERS_ORDER_ITEM_ID__SALES_ORDER_ITEM_ENTITY_ID"
+                    table="tm_bestofferseller_orders" column="order_item_id"
+                    referenceTable="sales_order_item" referenceColumn="item_id"/>
+
+    </table>
+</schema>
