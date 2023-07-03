@@ -1,4 +1,34 @@
 # Challenges - TM_BestOfferSeller
+
+## Setup Environment
+El enviroment se para este challenge es de nuestro querido amigo [MarkShust markshust/docker-magento](https://github.com/markshust/docker-magento). 
+Puede utilizar cualquier ambiente que le parezca comodo para realizar las pruebas. 
+
+Tengo un pequeño scripts que ayudara a levantar el ambiente rapidamente con la ayuda de markshust/docker-magento.
+
+Siga el siguiente paso.
+
+```sh
+curl -o- https://raw.githubusercontent.com/mmaximo33/challenge_tm/main/bin/deploy_lcl.sh | bash
+
+wget -qO- https://raw.githubusercontent.com/mmaximo33/challenge_tm/main/bin/deploy_lcl.sh | bash
+```
+
+**Requerimientos** 
+
+- Docker
+- Curl
+
+**Que ocurrira?**
+
+- Se creara un directorio en ~/Domains/project
+- Se apagagara apache
+- Se apagaran todos los contenedores que tenga corriendo
+- Se descargara el proyecto
+  - Importara base de datos
+  - Aplicaran configuraciones
+  - Se levantara el proyecto 100% funcional
+
 ## Index
 - [Challenge](#challenge)
   - [Contexto](#contexto)
