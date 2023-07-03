@@ -1,0 +1,4 @@
+"tm_provider_endpoint_200", "Information found"
+"tm_provider_endpoint_202", "The requested SKU does not have an offer"
+"tm_provider_endpoint_400", "Provider endpoint not found"
+"tm_provider_endpoint_500", "An error occurred while trying to process provider data"

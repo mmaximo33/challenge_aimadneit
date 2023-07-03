@@ -1,0 +1,33 @@
+{
+    "name": "tm/provider",
+    "version": "1.0.0",
+    "license": "MIT",
+    "type": "magento2-module",
+    "homepage": "https://github.com/mmaximo33/",
+    "description": "tm - Provider",
+    "keywords": [
+        "composer-installer",
+        "Magento",
+        "Module",
+        "Magento 2",
+        "Product Widget"
+    ],
+    "authors": [
+        {
+            "name": "Maximo Marucci",
+            "homepage": "https://www.linkedin.com/in/marucci-maximo/",
+            "role": "Analyst Developer"
+        }
+    ],
+    "require": {
+        "magento/backend": "^102.0|^103.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mmm\\Core\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

@@ -1,0 +1,7 @@
+"tm_provider_endpoint_200","Informacion encontrada"
+"tm_provider_endpoint_202","El SKU solicitado, no posee oferta"
+"tm_provider_endpoint_400","No se encuentra el endpoint del proveedor"
+"tm_provider_endpoint_500","Ocurrio un error al intentar procesar los datos del proveedor"
+"Success Rate","Tasa de exito"
+"Represents the probability that the endpoint returns code 200 when queried.","Representa la probabilidad de que el punto final devuelva el código 200 cuando se le consulta."
+
