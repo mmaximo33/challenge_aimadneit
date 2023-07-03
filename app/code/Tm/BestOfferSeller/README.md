@@ -132,6 +132,7 @@ ___Luego se obtiene solo el id de la oferta **x10 = 10**. **Model/BestOfferSelle
 Esto puede ser consultado desde el siguiente endpoint
 
 ```bash
+# Endpoints
 https://magento.test/tm_bestoffer/BestOffer/index/sku/:sku
 
 https://magento.test/tm_bestoffer/BestOffer/index/sku/24-MB01
@@ -209,12 +210,14 @@ WHERE
 Recordar que este sku debe estar en la **db** del modulo tm_provider
 
 ```bash
+# Endpoint
 https://magento.test/tm_bestoffer/BestOffer/index/sku/:sku
 
 https://magento.test/tm_bestoffer/BestOffer/index/sku/24-MB01
 ```
 
 ```bash
+# Response
 {
     "id": 10,
     "price": 11,
@@ -237,12 +240,14 @@ https://magento.test/tm_bestoffer/BestOffer/index/sku/24-MB01
 **Es necesario endpoint para obtener ordenes con BestOfferSeller por SKU**
 
 ```bash
+# Endpoint
 https://magento.test/tm_bestoffer/reports/index/sku/:sku
 
 https://magento.test/tm_bestoffer/reports/index/sku/24-MB01
 ```
 
 ```bash
+# Response
 [
     {
         "sku": "24-MB02",
@@ -281,12 +286,14 @@ https://magento.test/tm_bestoffer/reports/index/sku/24-MB01
 **Es necesario endpoint para obtener ordenes con BestOfferSeller por Date**
 
 ```bash
+# Endpoint
 https://magento.test/tm_bestoffer/reports/index/date/:date
 
 https://magento.test/tm_bestoffer/reports/index/date/2023-07-02
 ```
 
 ```bash
+# Response
 [
     {
         "sku": "24-MB02",

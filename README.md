@@ -16,6 +16,7 @@ wget -qO- https://raw.githubusercontent.com/mmaximo33/challenge_tm/main/bin/depl
 
 **Requerimientos** 
 
+- Linux
 - Docker
 - Curl
 
