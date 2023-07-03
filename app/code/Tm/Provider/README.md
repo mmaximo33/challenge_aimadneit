@@ -5,20 +5,26 @@
 - [Usaged](#Usaged)
 
 ## Resume
+
 This module simulates the endpoint query of a provider, where the data to be returned is set in a json file. See [database.json](./Controller/Provider/database.json)
 
-## Settings 
+## Settings
+
 In this module you can set the success rate to simulate problems on the endpoint
 
 ### Apply Setting
+
 #### From Backend
+
 This can be done from **Backend -> Menu > Stores > Configurations > Tienda Mia > Provider**
 <a href="./docs/img/settings_success_rate.png" target="_blank">
 <img src="./docs/img/settings_success_rate.png">
 </a>
 
 #### From Command Line
-You can also configure by CLI 
+
+You can also configure by CLI
+
 ```sh
 
 magento config:set tm_provider/general/success_rate <int from 0 to 100>
@@ -29,10 +35,13 @@ magento config:set tm_provider/general/success_rate 100
 ```
 
 ## Usaged
+
 Once the success rate has been applied and the data in the [../Model/database.json](./Model/database.json) file customized, you can check the result as follows
 
 ### Endpoint usage
-You can see the information to use the endpoints from 
+
+You can see the information to use the endpoints from
+
 ```sh
 # Endpoint domain/tm_provider/Provider/
 # Response
@@ -62,7 +71,9 @@ You can see the information to use the endpoints from
         },
         ....
 ```
+
 ### Endpoint All
+
 This endpoint shows all the available offers of the provider
 
 ```sh
@@ -98,6 +109,7 @@ This endpoint shows all the available offers of the provider
 ```
 
 ### Endpoint Sku
+
 This endpoint shows all the available offers of the provider 
 
 ```sh

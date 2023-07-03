@@ -65,20 +65,24 @@ Successful Response Body:
 ```
 
 # Analisis de solucion
+
 Inicialmente tengemos dos elementos, por un lado un seller y por otro el marketplace que concenctra sellers.
 
 ## Seller/Provider
-### Module: Tm_Provider <a href="./src/app/code/Tm/Provider/Readme.md" target="_blank">See Doc</a>
+### Module: Tm_Provider <a href="./app/code/Tm/Provider/README.md" target="_blank">See Doc</a>
+
 Este seller debe exponer endpoints para consultar 
 - Informacion relevante de su uso
 - Visualizar todos los datos de ejemplo configurados.
 - Visualizar todas las ofertas para un sku particular (Este ultimo es el que usaremos definitivamente)
 
 ## Marketplace
-### Module: Tm_BestOfferSeller <a href="./src/app/code/Tm/BestOfferSeller/Readme.md" target="_blank">See Doc</a>
+### Module: Tm_BestOfferSeller <a href="./app/code/Tm/BestOfferSeller/README.md" target="_blank">See Doc</a>
+
 Este modulo contendra toda la logica pesada que se realiza en una tienda de Magento 2 segun los requerimientos mencioandos en al comienzo.
 
 ### Resumen
+
 En resumidas cuentas se debe consultar el endpoint disponible de un seller segun el SKU y en caso que este devuelva seleccionar la mejor segun las condiciones establecidas.
 
 ### Requerimiento implicitos
@@ -104,6 +108,7 @@ En resumidas cuentas se debe consultar el endpoint disponible de un seller segun
 ### Oportunidad de mejora
 
 ### Stock
+
 El calculo de la oferta se realiza en funcion del precio, actualmente no se contempla el stock de la mejor oferta. 
 Esto supone un problema en caso de que el **customer** desee agregar al **cart** mas productos de lo que posee la oferta. 
 
@@ -124,6 +129,7 @@ Es importante tener presente que no se puede escular que el customer dentro del 
 Esto puede ser un problema si el Seller tiene una **alta rotación** de ese productos. 
 
 ___Analisis/Requerimiento.___ 
+
 - Al momento de agregar un producto desde el marketplace al cart, debe enviarse al seller esta reserva. 
 - Al momento de sacar el producto del cart debe enviarse al seller esta cancelacion de la reserva para liberar stock.
 - En caso que el seller cancele la reserva en su sistema, debe notificar al Marketplace la cancelacion.
@@ -132,9 +138,11 @@ ___Analisis/Requerimiento.___
   - Esto quiere decir que si posee 100 unidades, solo debera dejar a disposicion en la oferta un porcentaje menor a %70. 
 
 ### Performance
+
 Consultar las ofertas del seller cada vez que se trae un producto puede representar un alto costo a nivel performance, ya que como se menciono antes, depender de servicios de terceros puede ser un poco complicado. 
 
 ___Analisis/Requerimiento.___
+
 Para resolver este problema se podria
 - Crear un servicio independiente en otra instancia
 - Crear una tabla auxiliar tm_bestofferseller_currents_offers

@@ -1,6 +1,7 @@
-# Test Tm_BestOfferSeller
+# Tm_BestOfferSeller
 
 ## Endpoint collections
+
 Puede utiliza la siguiente coleccion de endpoints
 
 <a href="./docs/endpoints.postman_collection.json" target="_blank">endpoints.postman_collection.json</a>
@@ -10,6 +11,7 @@ Puede utiliza la siguiente coleccion de endpoints
 </a>
 
 ## Requerimiento implicitos
+
 1. [See](#1) El endpoint del seller puede llegar a falla, debe gestionarse esta condicion.
 2. [See](#2) Se debe definir el calculo para determinar la mejor oferta devuelta por el seller.
     1. Solo si la oferta es menor que el precio del producto se debe mostrar al customer en el frontend
@@ -29,13 +31,16 @@ Puede utiliza la siguiente coleccion de endpoints
 
 # Detalle
 ## 1.
+
 **El endpoint del seller puede llegar a falla, debe gestionarse esta condicion.**
 
 ## 2.
+
 **Se debe definir el calculo para determinar la mejor oferta devuelta por el seller.**
 El calculo para definir la mejor oferta esta definido en el modelo bajo la siguiente formular
 
 ___Se determina el total de ofertas (dos ofertas) **endpoint**__
+
 ```sh
   {
     "sku": "24-MB02",
@@ -75,6 +80,7 @@ ___Se determina el total de ofertas (dos ofertas) **endpoint**__
 ```
 
 ___Se agrupan elementos a evalular por id de oferta **Model/BestOfferSeller::prepareElementToEvaluate()**___
+
 ```bash
 {
    "price": { "x10": 75, "x11": 50 },
@@ -124,11 +130,13 @@ $weightStock          = 0.1;
 ___Luego se obtiene solo el id de la oferta **x10 = 10**. **Model/BestOfferSeller::getBestOfferId()**___
 
 Esto puede ser consultado desde el siguiente endpoint
+
 ```bash
 https://magento.test/tm_bestoffer/BestOffer/index/sku/:sku
 
 https://magento.test/tm_bestoffer/BestOffer/index/sku/24-MB01
 ```
+
 
 ## 3.
 **El nuevo precio debe ser visualizado en PDP, PDL, PDP**
@@ -147,11 +155,13 @@ https://magento.test/tm_bestoffer/BestOffer/index/sku/24-MB01
 </a>
 
 **2. Checkout process (sales)**
+
 <a href="./docs/checkout_process" target="_blank">
 <img src="./docs/checkout_process.png">
 </a>
 
 **3. En cada uno de los procesos anteriores se debe guardar la mejor oferta del seller para su trazabilidad (tabla tm_besoffersellers_orders).**
+
 <a href="./docs/table_tm_bestofferseller_orders.png" target="_blank">
 <img src="./docs/table_tm_bestofferseller_orders.png">
 </a>
@@ -194,11 +204,15 @@ WHERE
 ```
 
 ## 5.
+
 **Es necesario endpoint para comprobar rapidamente que oferta es mejor por sku**
 Recordar que este sku debe estar en la **db** del modulo tm_provider
 
-`https://magento.test/tm_bestoffer/BestOffer/index/sku/:sku`
-`https://magento.test/tm_bestoffer/BestOffer/index/sku/24-MB01`
+```bash
+https://magento.test/tm_bestoffer/BestOffer/index/sku/:sku
+
+https://magento.test/tm_bestoffer/BestOffer/index/sku/24-MB01
+```
 
 ```bash
 {
@@ -217,11 +231,16 @@ Recordar que este sku debe estar en la **db** del modulo tm_provider
     }
 }
 ```
+
 ## 6.
+
 **Es necesario endpoint para obtener ordenes con BestOfferSeller por SKU**
 
-`https://magento.test/tm_bestoffer/reports/index/sku/:sku`
-`https://magento.test/tm_bestoffer/reports/index/sku/24-MB01`
+```bash
+https://magento.test/tm_bestoffer/reports/index/sku/:sku
+
+https://magento.test/tm_bestoffer/reports/index/sku/24-MB01
+```
 
 ```bash
 [
@@ -260,8 +279,13 @@ Recordar que este sku debe estar en la **db** del modulo tm_provider
 
 ## 7.
 **Es necesario endpoint para obtener ordenes con BestOfferSeller por Date**
-`https://magento.test/tm_bestoffer/reports/index/date/:date`
-`https://magento.test/tm_bestoffer/reports/index/date/2023-07-02`
+
+```bash
+https://magento.test/tm_bestoffer/reports/index/date/:date
+
+https://magento.test/tm_bestoffer/reports/index/date/2023-07-02
+```
+
 ```bash
 [
     {
@@ -305,8 +329,11 @@ Este endpoint debe ser consultado desde el navegador, para que descargue el arch
 
 ___Se guarda en var/BestOfferSeller/2023-07-01-bestoffersellers_orders.csv___
 
-`https://magento.test/tm_bestoffer/reports/dailysummary/date/:date`
-`https://magento.test/tm_bestoffer/reports/dailysummary/date/2023-07-01`
+```bash
+https://magento.test/tm_bestoffer/reports/dailysummary/date/:date
+
+https://magento.test/tm_bestoffer/reports/dailysummary/date/2023-07-01
+```
 
 See <a href="./docs/2023-07-01bestoffersellers_orders.csv">2023-07-01-bestoffersellers_orders.csv</a>
 
@@ -324,10 +351,13 @@ bin/magento tmbestofferseller:dailysummary 2023-07-01
 
 
 ## 10.
+
 **Considerar translations**
+
 No require interaccion con usuarios no tecnicos. se empleo **i18n** en **tm_provider**
 
 ## 11.
+
 **Para mejorar en cuestion de perfomance se debe crear una tabla con su model, resourcemodel y collection para ser consultada rapidamente.**
 
 <a href="./docs/table_tm_bestofferseller_orders.png" target="_blank">
