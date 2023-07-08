@@ -100,7 +100,7 @@ Successful Response Body:
 Inicialmente tengemos dos elementos, por un lado un seller y por otro el marketplace que concenctra sellers.
 
 ## Seller/Provider
-### Module: Tm_Provider <a href="./app/code/Tm/Provider/README.md" target="_blank">See Doc</a>
+### Module: Tm_Provider <a href="./app/code/Tm/Provider" target="_blank">See Doc</a>
 
 Este seller debe exponer endpoints para consultar 
 - Informacion relevante de su uso
@@ -108,7 +108,7 @@ Este seller debe exponer endpoints para consultar
 - Visualizar todas las ofertas para un sku particular (Este ultimo es el que usaremos definitivamente)
 
 ## Marketplace
-### Module: Tm_BestOfferSeller <a href="./app/code/Tm/BestOfferSeller/README.md" target="_blank">See Doc</a>
+### Module: Tm_BestOfferSeller <a href="./app/code/Tm/BestOfferSeller" target="_blank">See Doc</a>
 
 Este modulo contendra toda la logica pesada que se realiza en una tienda de Magento 2 segun los requerimientos mencioandos en al comienzo.
 
